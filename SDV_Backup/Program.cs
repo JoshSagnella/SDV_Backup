@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO.Compression;
 
-namespace ConsoleApplication3
+
+namespace SDVBackup
 {
     class Program
     {
@@ -23,16 +24,17 @@ namespace ConsoleApplication3
             //string extractPath = @"c:\example\extract";
 
 
-            
+            //create backup dir if it doesn't exist already
+            System.IO.Directory.CreateDirectory(zipPath);
+
             ZipFile.CreateFromDirectory(startPath, zipPath + DateTime.Now.ToString("MM-dd-yyyy_HH-mm-ss") + ".zip");
             //ZipFile.CreateFromDirectory();
             //ZipFile.ExtractToDirectory(zipPath, extractPath);
             Console.WriteLine("All Done!");
             //Console.ReadLine();
             
-            //some text
-
         }
+
     }
 
 
